@@ -1,0 +1,22 @@
+.item-container {
+    width: calc(100%-20px);
+    height: auto;
+    min-height: 100px;
+    margin: 0 10px 10px;
+    border-radius: 10px;
+    border: 2px solid #AAB092;
+    display: flex;
+}
+
+.item-container > :nth-child(1) {
+    width: 15%;
+    
+}
+
+.item-container > :nth-child(2) {
+    width: 70%;
+}
+
+.item-container > :nth-child(3) {
+    width: 15%;
+}
