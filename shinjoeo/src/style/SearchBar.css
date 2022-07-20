@@ -1,9 +1,10 @@
 #SearchBarDiv {
-  height: 8.89%;
+  height: 50px;
   width: 100%;
-  border: 1px solid rgba(188, 129, 15, 0.2);
+  border: 1px solid #bc810f33;
   border-radius: 10px;
   margin: 0 auto;
+  max-width: 500px;
 }
 #searchInput {
   height: 70%;
