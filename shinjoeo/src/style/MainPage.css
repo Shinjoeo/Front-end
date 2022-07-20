@@ -4,12 +4,15 @@
   width: 100%;
   height: 100vh;
   min-width: 375px;
+  display: flex;
+  flex-direction: column;
 }
 
 .inner-container {
   width: 90%;
   height: calc(100%-50px);
   margin: 0 auto;
+  flex-grow: 1;
 }
 #filterDiv {
   text-align: center;
@@ -37,4 +40,22 @@
   height: 40px;
   background-color: rgba(85, 85, 85, 0.3);
   font-family: "YiSunShinRegular";
+}
+
+.home-btn {
+  width: 100%;
+  max-width: 500px;
+  margin:  0 auto;
+  height: 7%;
+}
+
+.homebtn{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #5C5C46;
+  font-size: 1.8rem;
+  color: white;
+  background-color: #5C5C46;
+  opacity: 80%;
+  cursor: pointer;
 }

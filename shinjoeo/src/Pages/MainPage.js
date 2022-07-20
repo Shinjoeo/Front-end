@@ -4,19 +4,33 @@ import SearchBar from '../Components/SearchBar';
 import List from '../Components/List';
 import '../style/MainPage.css';
 import {useState} from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const MainPage = () => {
+
+    const navigate = useNavigate();
+    const goUpload = () => {
+        navigate('/upload');
+        // setWord("");
+        // setExplain("");
+    }
+
 
     const [isActiveNew, setIsActiveNew] = useState(true);
     const [isActivePopular, setIsActivePopular] = useState(false);
 
     const handleClickNew = ()=>{
-        setIsActiveNew(!isActiveNew);
-        setIsActivePopular(!isActivePopular);
+        if(!isActiveNew){
+            setIsActiveNew(!isActiveNew);
+            setIsActivePopular(!isActivePopular);
+        }
+        
     };
     const handleClickPopular = ()=>{
-        setIsActivePopular(!isActivePopular);
-        setIsActiveNew(!isActiveNew);
+        if(!isActivePopular){
+            setIsActiveNew(!isActiveNew);
+            setIsActivePopular(!isActivePopular);
+        }
     };
 
     return (
@@ -32,6 +46,11 @@ const MainPage = () => {
                 {/* 헤더 제외 컴포넌트 넣으면 됨 */}
                 <List/>
             </div>
+
+            <div className='home-btn'>
+                <button className='homebtn' onClick={goUpload}>신조어 등록하기</button>
+            </div>
+
         </div>
     );
 };
