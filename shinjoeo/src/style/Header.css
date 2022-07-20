@@ -1,0 +1,8 @@
+#HeaderDiv {
+  height: 7.4%;
+  display: flex;
+}
+#kakaoImg,
+#LogoutImg {
+  cursor: pointer;
+}
