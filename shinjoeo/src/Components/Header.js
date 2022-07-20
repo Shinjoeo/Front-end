@@ -3,6 +3,7 @@ import '../style/Header.css';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const login = 1;
 
     const Login = ()=>{
         //카카오 로그인으로 이동
@@ -21,8 +22,8 @@ const Header = () => {
             <div>
             {
                 (login != true) ?
-                <img id="kakaoImg" onClick={Login} src='/kakao.jpg' alt='카카오img' /> :
-                <img id="LogoutImg" onClick={Logout} src='/logout.jpg' alt='로그아웃img' />
+                <img id="kakaoImg" onClick={Login} src='/ShinjoeoImg/kakao.jpg' alt='카카오img' /> :
+                <img id="LogoutImg" onClick={Logout} src='/ShinjoeoImg/logout.jpg' alt='로그아웃img' />
             }
             </div>
         </div>
