@@ -23,7 +23,7 @@ const WriteForm = () => {
     }
 
     return (
-        <>
+        <div className='main-container'>
             <Header />
             
             <div className='upload-content'>
@@ -38,7 +38,7 @@ const WriteForm = () => {
             <div className='upload-btn'>
                 <button className='uploadbtn' onClick={goHome}>신조어 등록하기</button>
             </div>
-        </>
+        </div>
     );
 }
 
