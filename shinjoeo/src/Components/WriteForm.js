@@ -24,10 +24,8 @@ const WriteForm = () => {
 
     return (
         <>
-            <div className='upload-header'>
-                <Header />
-            </div>
-
+            <Header />
+            
             <div className='upload-content'>
                 <div className='word'>
                     <input className='wordinput' onChange={wordControl} value={word} placeholder="등록 할 신조어를 입력 해 주세요." />

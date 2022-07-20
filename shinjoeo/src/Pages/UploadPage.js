@@ -5,7 +5,7 @@ import '../style/UploadPage.css'
 
 const UploadPage = () => {
     return (
-        <section className='upload-container'>
+        <section className='main-container'>
             {/* <Header /> */}
             <WriteForm />
         </section>
