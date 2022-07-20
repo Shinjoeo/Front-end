@@ -1,8 +1,27 @@
 #HeaderDiv {
-  height: 7.4%;
+  height: 50px;
   display: flex;
+  margin-bottom: 5%;
+}
+.HeaderDivSide {
+  width: 20%;
+}
+.HeaderDivCenter {
+  width: 60%;
 }
 #kakaoImg,
 #LogoutImg {
   cursor: pointer;
+  height: 70%;
+  width: 35%;
+  position: relative;
+  top: 2.5vh;
+  right: 1vh;
+}
+#HeaderDiv h1 {
+  text-align: center;
+  color: #555555;
+}
+#HeaderLogo {
+  text-decoration: none;
 }
