@@ -1,0 +1,16 @@
+#SearchBarDiv {
+  height: 8.89%;
+  width: 86%;
+  border: 1px solid rgba(188, 129, 15, 0.2);
+  border-radius: 10px;
+}
+#searchInput {
+  height: 83%;
+  width: 96%;
+  border: 1px solid rgba(170, 176, 146, 0.5);
+}
+#searchImg {
+  cursor: pointer;
+  height: 41.67%;
+  width: 8.93%;
+}
