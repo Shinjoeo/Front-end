@@ -1,10 +1,8 @@
 import React from 'react';
 import '../style/SearchBar.css';
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
 const SearchBar = (props) => {
-    const [searchParams,setSearchParams] = useSearchParams();
     const [searchValue,setSearchValue] = useState("");
     const {setSearchWord} = props;
     /*검색어 결정*/
@@ -15,8 +13,6 @@ const SearchBar = (props) => {
 
     /* 검색 함수 */
     const searchClick = ()=>{
-        const search = (searchParams.get("search"));
-        setSearchParams({search:search===searchValue ? searchValue:searchValue});
 
         setSearchWord(searchValue);
         setSearchValue('');
