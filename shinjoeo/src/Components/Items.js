@@ -5,14 +5,15 @@ const Items = () => {
 
     return (
         <section className='item-container'>
-            <div>1</div>
-            <div>
-                <div>name</div>
-                <div>explain</div>
+            <div id='rank'>1</div>
+            <div id='word-info-box'>
+                <div><br/>어쩔티비</div>
+                <div>어쩌라고 가서 티비나 봐</div>
             </div>
-            <div>
-                <div>하트</div>
-                <div>토글 버튼</div>
+            <div id='main-btns'>
+                <div><img className='btn' src='/ShinjoeoImg/fillHeart.png'/></div>
+                <div>&nbsp;20</div>
+                <div><img className='btn' src='/ShinjoeoImg/toggleDown.png'/></div>
             </div>
         </section>
     );

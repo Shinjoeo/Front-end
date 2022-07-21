@@ -8,15 +8,49 @@
     display: flex;
 }
 
-.item-container > :nth-child(1) {
+/* rank */
+#rank {
     width: 15%;
-    
+    font-family: 'NanumSquareRound';
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
 }
 
-.item-container > :nth-child(2) {
+/* 단어 정보 */
+#word-info-box {
     width: 70%;
 }
 
-.item-container > :nth-child(3) {
+#word-info-box > :nth-child(1) {
+    height: 50%;
+    font-size: 23px;
+}
+
+#word-info-box > :nth-child(2) {
+    height: 47%;
+    font-size: 17px;
+    margin-top: 3%;
+}
+
+/* 버튼들 */
+#main-btns {
     width: 15%;
+}
+
+#main-btns > div .btn {
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+#main-btns > :nth-child(2) {
+    font-family: 'NanumSquareRound';
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#main-btns > :nth-child(3) > .btn {
+    height: 20px;
 }
