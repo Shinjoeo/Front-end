@@ -18,11 +18,14 @@ const MainPage = () => {
 
     const [isActiveNew, setIsActiveNew] = useState(true);
     const [isActivePopular, setIsActivePopular] = useState(false);
+    const [sortOption, setSortOption] = useState("new"); 
 
     const handleClickNew = ()=>{
         if(!isActiveNew){
             setIsActiveNew(!isActiveNew);
             setIsActivePopular(!isActivePopular);
+            setSortOption("new");
+            setSearchWord("");
         }
         
     };
@@ -30,6 +33,8 @@ const MainPage = () => {
         if(!isActivePopular){
             setIsActiveNew(!isActiveNew);
             setIsActivePopular(!isActivePopular);
+            setSortOption("popular");
+            setSearchWord("");
         }
     };
 
@@ -45,8 +50,7 @@ const MainPage = () => {
                     <button type="button" className={isActivePopular ? 'dontClickBtn' : 'clickBtn'} onClick={handleClickPopular}>인기순</button>
                 </div>
                 {/* 헤더 제외 컴포넌트 넣으면 됨 */}
-                {console.log(searchWord)}
-                <List searchWord={searchWord} />
+                <List searchWord={searchWord} sort={sortOption}/>
             </div>
 
             <div className='home-btn'>
