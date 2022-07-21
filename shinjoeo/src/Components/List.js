@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../style/List.css';
 import Items from './Items';
 
@@ -6,14 +7,52 @@ const List = (props) => {
     
     // 전체 신조어 저장하는 변수
     const [data, setData] = useState([]);
+    const [url, setUrl] = useState("");
+
+    // url 세팅 함수
+    const makeUrl = () => {
+        if(props.searchWord) {
+            setUrl(`/main/list/?searchword=%${props.searchWord}`);
+        } else {
+            if (props.sort === "new") {
+                setUrl("/main/list");
+            } else if (props.sort === "popular") {
+                setUrl("/main/listbylike");
+            }
+        }
+    }
 
     // 첫 화면 로드 시 데이터 받아오기
     useEffect(() => {
-        // axios로 받아와서 
-
-        // 데이터를 하나의 변수에 전체 저장
-        // setData();
+        // 기본값은 최신순 정렬
+        axios.get("/main/list/")
+        .then((res) => {
+            setData(res.data);
+        })
+        .catch((err) => {
+             alert("데이터를 불러오지 못했습니다.");
+        })
     }, []);
+
+    console.log(data);
+
+    useEffect(() => {
+        makeUrl();
+    }, [props.searchWord, props.sort]);
+
+    useEffect(() => {
+        console.log(url);
+        // 받은 url로 axios처리하면됨
+
+        // axios.get(`${url}`)
+        // .then((res) => {
+        //     setData(res.data);
+        // })
+        // .catch((err) => {
+        //     alert("데이터를 불러오지 못했습니다.");
+        // })
+
+    }, [url]);
 
     return (
         <section className='list-container'>
