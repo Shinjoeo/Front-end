@@ -6,6 +6,7 @@
     border-radius: 10px;
     border: 2px solid #AAB092;
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* rank */
@@ -53,4 +54,27 @@
 
 #main-btns > :nth-child(3) > .btn {
     height: 20px;
+}
+
+#word-info-box > :nth-child(2) {
+    opacity: 50%;
+}
+
+/* 버튼 토글 and 설명 */
+.item-container > .main-explain-none {
+    /* display: none; */
+    height: 0;
+    opacity: 0;
+}
+
+.item-container > .main-explain {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    border: 2px solid #AAB092;
+    transition: 0.25s all;
 }
