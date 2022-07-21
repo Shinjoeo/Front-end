@@ -3,11 +3,13 @@ import Header from '../Components/Header';
 import SearchBar from '../Components/SearchBar';
 import List from '../Components/List';
 import '../style/MainPage.css';
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import {useNavigate} from 'react-router-dom'
 
 const MainPage = () => {
     const [searchWord, setSearchWord] = useState("");
+    const [login,setLogin] = useState(false);
+
     const navigate = useNavigate();
     const goUpload = () => {
         navigate('/upload');
@@ -15,6 +17,9 @@ const MainPage = () => {
         // setExplain("");
     }
 
+    useEffect(()=>{
+        (localStorage.getItem('username'))?setLogin(true):setLogin(false)
+    },[])
 
     const [isActiveNew, setIsActiveNew] = useState(true);
     const [isActivePopular, setIsActivePopular] = useState(false);
@@ -40,7 +45,7 @@ const MainPage = () => {
 
     return (
         <div className='main-container'>
-            <Header />
+            <Header login={login} />
 
             <div className='inner-container'>
                 <SearchBar setSearchWord={setSearchWord} />

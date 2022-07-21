@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import "../style/WriteForm.css"
-import Header from './Header';
 
 const WriteForm = () => {
 
@@ -34,7 +33,6 @@ const WriteForm = () => {
 
     return (
         <div className='main-container'>
-            <Header />
             
             <div className='upload-content'>
                 <div className='word'>
