@@ -7,6 +7,7 @@
 }
 .HeaderDivSide {
   width: 20%;
+  text-align: right;
 }
 .HeaderDivCenter {
   width: 60%;
@@ -17,8 +18,7 @@
   height: 70%;
   width: 35%;
   position: relative;
-  top: 2.5vh;
-  right: 1vh;
+  margin: 10% 30% 10% 0;
 }
 #HeaderDiv h1 {
   text-align: center;

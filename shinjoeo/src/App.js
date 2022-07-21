@@ -1,5 +1,6 @@
 import MainPage from './Pages/MainPage';
 import UploadPage from './Pages/UploadPage';
+import Callback from './Pages/Callback';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
@@ -10,6 +11,7 @@ function App() {
       <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/upload" element={<UploadPage />}/>
+          <Route path="/callback" element={<Callback />}/>
       </Routes>
       </BrowserRouter>
     </div>

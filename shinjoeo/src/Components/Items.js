@@ -2,10 +2,8 @@ import React,  {useState} from 'react';
 import axios from 'axios';
 import '../style/Items.css';
 
-const Items = ({data, popular}) => {
+const Items = (props) => {
 
-    console.log(data);
-    console.log(popular);
     const [toggle, setToggle] = useState(false)
     const toggleExplain = () => {
         setToggle(!toggle);
@@ -42,22 +40,22 @@ const Items = ({data, popular}) => {
         <section className='item-container'>
             <div id='rank'>1</div>
             <div id='word-info-box'>
-                <div><br/>{data.word}</div>
-                <div>{data.explain}</div>
+                <div><br/>{props.data.word}</div>
+                <div>{props.data.explain}</div>
             </div>
             <div id='main-btns'>
                 <div>
                     {(likeToggle == false) ? <img className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={heartToggle}/> : <img className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>}
                 </div>
                 <div>
-                    &nbsp;{data.likeCnt}
+                    &nbsp;{props.data.likeCnt}
                 </div>
                 <div>
                     {(toggle === false) ? (<img className='btn' src='/ShinjoeoImg/toggleDown.png' onClick={toggleExplain}/>) : (<img className='btn' src='/ShinjoeoImg/toggleUp.png' onClick={toggleExplain}/>)}
                 </div>
             </div>
             <div className={(toggle == false) ? 'main-explain-none' : 'main-explain'}>
-                    <p>{data.explain}</p>
+                    <p>{props.data.explain}</p>
             </div>
             <div id={(trash == true) ? 'trash' : 'trash-none'} onClick={deletePost}>
                 <img className='trash' src='/ShinjoeoImg/trashcan.jpg' />
