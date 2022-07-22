@@ -8,7 +8,7 @@ const SplashPage = () => {
     useEffect(() => {
         setTimeout(() => {
             navigate('/main');
-        }, 0000);
+        }, 2000);
     });
 
     return (
