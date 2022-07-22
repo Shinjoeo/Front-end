@@ -1,6 +1,6 @@
 import React,  {useState} from 'react';
-import axios from 'axios';
 import '../style/Items.css';
+import {PROXY_BASE_URL} from '../privateUrls.js';
 
 const Items = (props) => {
 
@@ -30,10 +30,13 @@ const Items = (props) => {
 
 
     const deletePost = () => {
-        // axios.delete('')
-        //     .then((res) => alert("글 삭제 완료 !"))
-        //     .catch((err) => alert("글 삭제 실패 !"))
-        alert("삭제 버튼 작동")
+        if (window.confirm("정말 삭제합니까?")) {
+            fetch(`${PROXY_BASE_URL}/main/newword/${props.data.id}/`, { method: 'DELETE' })
+            .then(() => window.location.reload());
+            alert("삭제되었습니다.");
+          } else {
+            alert("취소합니다.");
+          }
     }
 
     return (
@@ -57,9 +60,13 @@ const Items = (props) => {
             <div className={(toggle == false) ? 'main-explain-none' : 'main-explain'}>
                 <p>{props.data.explain}</p>
             </div>
-            <div id={(trash == true) ? 'trash' : 'trash-none'} onClick={deletePost}>
-                <img className='trash' src='/ShinjoeoImg/trashcan.jpg' />
-            </div>
+            {
+                (parseInt(localStorage.getItem('id'))===props.data.create_user_id)?
+                <div id={(trash == true) ? 'trash' : 'trash-none'} onClick={deletePost}>
+                    <img className='trash' src='/ShinjoeoImg/trashcan.jpg' />
+                </div>
+                :""
+            }
         </section>
     );
 };
