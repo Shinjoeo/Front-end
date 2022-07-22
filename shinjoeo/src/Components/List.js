@@ -43,6 +43,8 @@ const List = (props) => {
         })
     }, [props.searchWord, props.sort]);
 
+    console.log(datas);
+
     return (
         <section className='list-container'>
             {/* 데이터 개수만큼 item 컴포넌트 map 함수 돌리기 (props는 전체 데이터를 배열 개수만큼 순차적으로 받아서 넘겨주기) */}
