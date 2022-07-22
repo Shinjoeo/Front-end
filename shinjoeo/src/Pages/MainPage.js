@@ -54,11 +54,12 @@ const MainPage = () => {
                 </div>
                 <List searchWord={searchWord} sort={sortOption}/>
             </div>
-
-            <div className='home-btn'>
-                <button className='homebtn' onClick={goUpload}>신조어 등록하기</button>
-            </div>
-
+            {
+                localStorage.getItem('accessToken') ?
+                <div className='home-btn'>
+                    <button className='homebtn' onClick={goUpload}>신조어 등록하기</button>                
+                </div> : null
+            }   
         </div>
     );
 };
