@@ -29,6 +29,7 @@ const List = (props) => {
         } else {
             if (props.sort === "new") {
                 url = "/main/list/";
+                setIsPopular(false);
             } else if (props.sort === "popular") {
                 url = "/main/listbylike/";
                 setIsPopular(true);
@@ -43,14 +44,14 @@ const List = (props) => {
         })
     }, [props.searchWord, props.sort]);
 
-    console.log(datas);
+    // console.log(datas);
 
     return (
         <section className='list-container'>
             {/* 데이터 개수만큼 item 컴포넌트 map 함수 돌리기 (props는 전체 데이터를 배열 개수만큼 순차적으로 받아서 넘겨주기) */}
             {
-                datas.map((ele)=>{
-                    return <Items data={ele} isPopular={isPopular} key={ele.id} />;
+                datas.map((ele, idx)=>{
+                    return <Items data={ele} isPopular={isPopular} idx={idx+1} />;
                 })
             }
         </section>

@@ -23,7 +23,7 @@ const Header = ({login}) => {
 
             </div>
             <div className='HeaderDivCenter'>
-            <Link id="HeaderLogo" to='/'>
+            <Link id="HeaderLogo" to='/main'>
                 <h1>신조어 도감</h1>
             </Link>
             </div>

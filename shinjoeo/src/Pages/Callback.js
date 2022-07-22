@@ -17,7 +17,7 @@ const Callback = () => {
             localStorage.setItem('username', res.data.user_id); //name, AccessToken -> 로그인 인증
             localStorage.setItem('accessToken',res.data.access_token);
             localStorage.setItem('id',res.data.id);
-            navigate('/');
+            navigate('/main');
         })
         .catch((err) => {
             console.log(err);

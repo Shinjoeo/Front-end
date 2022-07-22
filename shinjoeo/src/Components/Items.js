@@ -42,7 +42,7 @@ const Items = (props) => {
 
     return (
         <section className='item-container'>
-            <div id='rank'>1</div>
+            <div id='rank'>{props.isPopular ? props.idx : ( props.idx<=3 ? <span id='new'>신규</span> : '')}</div>
             <div id='word-info-box'>
                 <div><br/>{props.data.word}</div>
                 <div>{props.data.explain}</div>

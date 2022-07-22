@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       <Routes>
-          <Route path="/splash" element={<SplashPage/>} />
-          <Route path="/" element={<MainPage/>} />
+          <Route path="/" element={<SplashPage/>} />
+          <Route path="/main" element={<MainPage/>} />
           <Route path="/upload" element={<UploadPage/>} />
           <Route path="/callback" element={<Callback/>} />
       </Routes>

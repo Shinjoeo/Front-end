@@ -29,7 +29,7 @@ const WriteForm = () => {
         axios.post(`${PROXY_BASE_URL}/main/newword/`, body)
             .then((res) => {
                 alert("글 등록 완료 !")
-                navigate('/')
+                navigate('/main')
             })
             .catch((error) => alert("등록에 실패하였습니다."))
     }
