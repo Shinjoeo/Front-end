@@ -1,5 +1,5 @@
 .item-container {
-  width: calc(100%-20px);
+  width: calc(100% - 20px);
   height: auto;
   min-height: 100px;
   margin: 0 10px 10px;
@@ -17,6 +17,11 @@
   font-size: 30px;
   text-align: center;
   line-height: 100px;
+}
+
+#new {
+  font-size : 18px;
+  font-family: 'YiSunShinRegular';
 }
 
 /* 단어 정보 */
