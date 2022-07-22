@@ -1,17 +1,10 @@
 import React from 'react';
 import '../style/Header.css';
-import { Link,useLocation,useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AUTH_URL, PROXY_BASE_URL } from '../privateUrls.js';
 
 const Header = ({login}) => {
-    const location = useLocation();
-    const navigate = useNavigate();
 
-    const REST_API_KEY = 'fad3300d7c33374e2bb2bab358bcbec3';
-    const REDIRECT_URI = 'http://localhost:3000/callback'; //백이랑 맞춰야함
-
-    const AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-    
-    
     const Login = ()=>{
         window.location.href=AUTH_URL; //카카오 로그인으로 이동
     };
@@ -19,7 +12,7 @@ const Header = ({login}) => {
     const Logout = ()=>{
         console.log("click logout");
         localStorage.clear();
-        window.location.href = 'http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000/accounts/logout/';
+        window.location.href = `${PROXY_BASE_URL}/accounts/logout/`;
         //로그 아웃 기능
     };
     

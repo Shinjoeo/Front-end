@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import "../style/WriteForm.css"
-import Header from './Header';
+import { PROXY_BASE_URL } from '../privateUrls';
 
 const WriteForm = () => {
 
@@ -23,22 +23,15 @@ const WriteForm = () => {
         let body = {
             create_user_id : localStorage.getItem('id'),
             word : word,
-            explain : explain,
-            // likeCnt : 0,
-            // like_user_ids : [],
+            explain : explain
         }
-        
-        console.log(body);
-        
-        axios.post('http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000/main/newword/', body)
+
+        axios.post(`${PROXY_BASE_URL}/main/newword/`, body)
             .then((res) => {
                 alert("글 등록 완료 !")
                 navigate('/')
             })
             .catch((error) => alert("등록에 실패하였습니다."))
-        // navigate('/');
-        // setWord("");
-        // setExplain("");
     }
 
     return (
