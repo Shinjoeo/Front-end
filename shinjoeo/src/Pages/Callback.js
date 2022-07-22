@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const Callback = () => {
-    // useEffect(()=> {
-    //     let params = new URL(document.location.toString()).searchParams;
-    //     let code = params.get("code"); // 인가코드 받는 부분
-    //     let grant_type = location.search.split('=')[1];
-    //     let client_id = "REST API 부분을 넣어준다.";
+
+    const location = useLocation();
+    const navigate = useNavigate();
+   
+    /*인가코드 발급*/
+    useEffect(()=>{
+        const KAKAO_CODE = location.search.split('=')[1];
         
-    
-    //     axios.post(`https://kauth.kakao.com/oauth/token?
-    //         grant_type=${grant_type}
-    //         &client_id=${client_id}
-    //         &redirect_uri=http://localhost:3000/oauth/callback/kakao
-    //         &code=${code}`
-    //         , {
-    //     headers: {
-    //         'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
-    //     }
-    //   }).then((res) => {
-    //       console.log(res)
-    //       // res에 포함된 토큰 받아서 원하는 로직을 하면된다.
-    //   })
-    //   }, [])
+        // 백한테 넘겨줌
+        axios.get(`/accounts/login/callback/?code=${KAKAO_CODE}`)
+        .then((res) => {
+            localStorage.setItem('username', res.data.user_id); //name, AccessToken -> 로그인 인증
+            localStorage.setItem('accessToken',res.data.access_token);
+            localStorage.setItem('id',res.data.id);
+            navigate('/');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+
+        
+    },[]);
+
     return (
         <div>
-            callback page
+            <img src='/ShinjoeoImg/splashwithlogo.png' alt='이미지 없음'/>
         </div>
     );
 };
