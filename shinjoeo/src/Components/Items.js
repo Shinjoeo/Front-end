@@ -1,5 +1,6 @@
 import React,  {useState} from 'react';
 import '../style/Items.css';
+import axios from 'axios';
 import {PROXY_BASE_URL} from '../privateUrls.js';
 
 const Items = (props) => {
@@ -10,15 +11,22 @@ const Items = (props) => {
     }
 
     const [likeToggle, setLikeToggle] = useState(false);
-    const body = {
-        user_id : localStorage.getItem('user_id')
-    }
     const heartToggle = () => {
         if(likeToggle == false) {
-            setLikeToggle(!likeToggle);
-            // axios.put('', body)
-            //     .then((res) => alert("좋아요 성공 !")) // List에서 하트 갯수 받아 온 후 +1 하는 방식으로 로직 구현하기
-            //     .catch((err) => alert("좋아요 실패 !"))
+            const requestOptions = {
+                method:'PUT',
+                headers:{'Content-Type':'application/json'},
+                body: '',
+            }
+            fetch(`${PROXY_BASE_URL}/main/newword/${props.data.id}/`, requestOptions)
+                .then((res) => {
+                    console.log(res);
+                    setLikeToggle(!likeToggle);
+                    alert("좋아요 성공 !");
+                    window.location.reload();
+                })
+                .catch((err) => alert("좋아요 실패 !"))
+
         } else {
             alert("한 번 누른 좋아요는 취소 할 수 없습니다 !")
         }
@@ -27,8 +35,6 @@ const Items = (props) => {
     // 삭제 로직 : List에서 user_id를 받아와서 로컬의 값과 비교했을 때 일치하는 것만 쓰레기통 만들기.
     // 휴지통 누르면 axios Delete 보내기 
     const [trash, setTrash] = useState(true);
-
-    console.log(props.data.like_user_ids);
 
     const deletePost = () => {
         if (window.confirm("정말 삭제합니까?")) {
