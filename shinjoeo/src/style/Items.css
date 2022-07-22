@@ -1,100 +1,100 @@
 .item-container {
-    width: calc(100%-20px);
-    height: auto;
-    min-height: 100px;
-    margin: 0 10px 10px;
-    border-radius: 10px;
-    border: 2px solid #AAB092;
-    display: flex;
-    flex-wrap: wrap;
+  width: calc(100%-20px);
+  height: auto;
+  min-height: 100px;
+  margin: 0 10px 10px;
+  border-radius: 10px;
+  border: 2px solid #aab092;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* rank */
 #rank {
-    width: 15%;
-    font-family: 'NanumSquareRound';
-    font-weight: bolder;
-    font-size: 30px;
-    text-align: center;
-    line-height: 100px;
+  width: 15%;
+  font-family: "NanumSquareRound";
+  font-weight: bolder;
+  font-size: 30px;
+  text-align: center;
+  line-height: 100px;
 }
 
 /* 단어 정보 */
 #word-info-box {
-    width: 70%;
+  width: 70%;
 }
 
 #word-info-box > :nth-child(1) {
-    height: 50%;
-    font-size: 23px;
+  height: 50%;
+  font-size: 23px;
 }
 
 #word-info-box > :nth-child(2) {
-    height: 47%;
-    font-size: 17px;
-    margin-top: 3%;
+  height: 47%;
+  font-size: 17px;
+  margin-top: 3%;
 }
 
 /* 버튼들 */
 #main-btns {
-    width: 15%;
+  width: 15%;
 }
 
 #main-btns > div .btn {
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
 }
 
 #main-btns > :nth-child(2) {
-    font-family: 'NanumSquareRound';
-    font-size: 14px;
-    font-weight: bold;
+  font-family: "NanumSquareRound";
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #main-btns > :nth-child(3) > .btn {
-    height: 20px;
+  height: 20px;
 }
 
 #word-info-box > :nth-child(2) {
-    opacity: 50%;
+  opacity: 50%;
 }
 
 /* 버튼 토글 and 설명 */
 .item-container > .main-explain-none {
-    /* display: none; */
-    height: 0;
-    opacity: 0;
+  /* display: none; */
+  height: 0;
+  opacity: 0;
 }
 
 .item-container > .main-explain {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 10px;
-    border: 2px solid #AAB092;
-    transition: 0.25s all;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  border: 2px solid #aab092;
+  transition: 0.25s all;
 }
 
 /* 삭제하기 버튼 */
 #trash {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    background-color: rgb(85, 85, 85, 0.3);
-    border-radius: 0 0 10px 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    z-index: 1;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: rgb(85, 85, 85, 0.3);
+  border-radius: 0 0 10px 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  z-index: 1;
 }
 
 #trash > .trash {
-    width : 25px;
+  width: 25px;
 }
 
 #trash-none {
-    display: none;
+  display: none;
 }

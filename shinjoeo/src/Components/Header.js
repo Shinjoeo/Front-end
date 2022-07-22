@@ -9,48 +9,43 @@ const Header = ({login}) => {
     const navigate = useNavigate();
 
     const REST_API_KEY = 'fad3300d7c33374e2bb2bab358bcbec3';
-    const REDIRECT_URI = 'http://localhost:3000';
+    const REDIRECT_URI = 'http://localhost:3000'; //백이랑 맞춰야함
+
     const AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-    
-    console.log(login);
     
     
     const Login = ()=>{
-        console.log("click login");
         window.location.href=AUTH_URL; //카카오 로그인으로 이동
-        console.log("test");
     };
 
     /*인가코드 발급*/
     useEffect(()=>{
         const KAKAO_CODE = location.search.split('=')[1];
         
-        console.log(KAKAO_CODE);
-        console.log("Test");
-        
-        console.log(KAKAO_CODE);
         axios.get(`/accounts/login/callback/?code=${KAKAO_CODE}`)
         .then((res) => {
             console.log(res.data);
-            localStorage.setItem('username', res.data.user_id);
-            window.location.reload();
+            localStorage.setItem('username', res.data.user_id); //name, AccessToken -> 로그인 인증
+            localStorage.setItem('accessToken',res.data.access_token);
         })
         .catch((err) => {
             console.log(err);
         })
+
+        
     },[]);
+
+    
+
+
     
     const Logout = ()=>{
         console.log("click logout");
         localStorage.clear();
-        window.location.href = 'http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000/accounts/logout';
+        window.location.href = 'http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000/accounts/logout/';
         //로그 아웃 기능
     };
     
-    useEffect(()=>{
-        console.log(login);
-        console.log("chage login");
-    },[login])
 
     return (
         <div id="HeaderDiv">
