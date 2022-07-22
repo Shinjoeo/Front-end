@@ -55,7 +55,7 @@ const Items = (props) => {
                 </div>
             </div>
             <div className={(toggle == false) ? 'main-explain-none' : 'main-explain'}>
-                    <p>{props.data.explain}</p>
+                <p>{props.data.explain}</p>
             </div>
             <div id={(trash == true) ? 'trash' : 'trash-none'} onClick={deletePost}>
                 <img className='trash' src='/ShinjoeoImg/trashcan.jpg' />

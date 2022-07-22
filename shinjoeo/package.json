@@ -37,9 +37,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://ec2-54-180-8-2.ap-northeast-2.compute.amazonaws.com:8000"
 }
