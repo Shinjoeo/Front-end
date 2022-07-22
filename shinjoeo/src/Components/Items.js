@@ -28,6 +28,7 @@ const Items = (props) => {
     // 휴지통 누르면 axios Delete 보내기 
     const [trash, setTrash] = useState(true);
 
+    console.log(props.data.like_user_ids);
 
     const deletePost = () => {
         if (window.confirm("정말 삭제합니까?")) {
@@ -47,9 +48,15 @@ const Items = (props) => {
                 <div>{props.data.explain}</div>
             </div>
             <div id='main-btns'>
+                {
+                (localStorage.getItem('id'))?
                 <div>
-                    {(likeToggle == false) ? <img className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={heartToggle}/> : <img className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>}
-                </div>
+                    {(likeToggle == false) ? (((props.data.like_user_ids).includes(parseInt(localStorage.getItem('id'))))?<img className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>:<img className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={heartToggle}/>) : <img className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>}
+                </div>:
+                <div>
+                    <img className='btn' src='/ShinjoeoImg/unfillHeart.png'/>
+                </div>    
+                }
                 <div>
                     &nbsp;{props.data.likeCnt}
                 </div>
