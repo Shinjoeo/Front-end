@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/Header.css';
 import { Link } from 'react-router-dom';
-import { AUTH_URL, PROXY_BASE_URL } from '../privateUrls.js';
+import { AUTH_URL, REST_API_KEY } from '../privateUrls.js';
 
 const Header = ({login}) => {
 
@@ -11,7 +11,7 @@ const Header = ({login}) => {
     
     const Logout = ()=>{
         localStorage.clear();
-        window.location.href = `${PROXY_BASE_URL}/accounts/logout/`;
+        window.location.href = `https://accounts.kakao.com/logout?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Flogout%2Fcallback%3Fclient_id%3D${REST_API_KEY}%26logout_redirect_uri%3Dhttp%3A%2F%2Fshinjoeo.s3-website.ap-northeast-2.amazonaws.com%2Fmain`;
     };
     
 

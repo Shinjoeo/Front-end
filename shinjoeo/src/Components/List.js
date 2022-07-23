@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../style/List.css';
 import Items from './Items';
+import {PROXY_BASE_URL} from '../privateUrls.js';
 
 const List = (props) => {
     
@@ -18,7 +19,7 @@ const List = (props) => {
             setDatas(res.data);
         })
         .catch((err) => {
-             alert("데이터를 불러오지 못했습니다.");
+            //  alert("데이터를 불러오지 못했습니다.");
         })
     }, []);
 
@@ -26,15 +27,15 @@ const List = (props) => {
         let url = '';
         console.log(props.searchWord);
         if(props.searchWord) {
-            url = `/main/list/?searchword=${props.searchWord}`;
+            url = `${PROXY_BASE_URL}/main/list/?searchword=${props.searchWord}`;
             setIsSearch(true);
         } else {
             if (props.sort === "new") {
-                url = "/main/list/";
+                url = `${PROXY_BASE_URL}/main/list/`;
                 setIsPopular(false);
                 setIsSearch(false);
             } else if (props.sort === "popular") {
-                url = "/main/listbylike/";
+                url = `${PROXY_BASE_URL}/main/listbylike/`;
                 setIsPopular(true);
                 setIsSearch(false);
             }
