@@ -29,7 +29,7 @@ const Callback = () => {
 
     return (
         <div>
-            <img src='/ShinjoeoImg/splashwithlogo.png' alt='이미지 없음'/>
+            {/* <img src='/ShinjoeoImg/splashwithlogo.png' alt='이미지 없음'/> */}
         </div>
     );
 };

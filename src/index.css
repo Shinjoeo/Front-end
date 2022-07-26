@@ -23,6 +23,10 @@ body {
   font-family: 'YiSunShinRegular';
 }
 
+button, html [type="button"] {
+  -webkit-appearance: none;   
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
