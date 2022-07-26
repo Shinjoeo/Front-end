@@ -22,8 +22,8 @@ const SearchBar = (props) => {
 
     return (
         <div id="SearchBarDiv">
-            <input placeholder='지금바로 신조어를 검색해 보세요' id="searchInput" type="text" value={searchValue} onChange={onChange} />
-            <img id="searchImg" onClick={searchClick} src='/ShinjoeoImg/search.jpg' alt='돋보기img' />            
+            <input placeholder='   지금바로 신조어를 검색해 보세요' id="searchInput" type="text" value={searchValue} onChange={onChange} />
+            <input id="searchImg" type='image' onClick={searchClick} src='/ShinjoeoImg/search.jpg' alt='돋보기img'/>         
         </div>
     );
 };

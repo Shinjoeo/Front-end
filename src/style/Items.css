@@ -32,12 +32,13 @@
 #word-info-box > :nth-child(1) {
   height: 50%;
   font-size: 23px;
+  margin-left: 3%;
 }
 
 #word-info-box > :nth-child(2) {
   height: 47%;
   font-size: 17px;
-  margin-top: 3%;
+  margin: 3% 3% 0;
   opacity: 50%;
 }
 
@@ -101,3 +102,14 @@
   display: none;
 }
 
+/* @media (min-width: 270px) and (max-width: 300px) {
+  #word-info-box > :nth-child(2) {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+  #word-info-box > :nth-child(2) {
+    font-size: 15px;
+  }
+} */
