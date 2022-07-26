@@ -2,9 +2,22 @@ import React,  { useState} from 'react';
 import '../style/Items.css';
 import axios from 'axios';
 import {PROXY_BASE_URL} from '../privateUrls.js';
+import { useMediaQuery } from "react-responsive";
 
 
 const Items = (props) => {
+    const smalltext = useMediaQuery({
+        query: '(max-width: 300px)'
+    });
+
+    const middletext = useMediaQuery({
+        query: '(min-width: 300px) and (max-width: 400px)'
+    });
+
+    const bigtext = useMediaQuery({
+        query: '(min-width: 400px) and (max-width: 500px)'
+    });
+
     const [count, setCount] = useState(props.data.likeCnt);
     const [toggle, setToggle] = useState(false)
     const toggleExplain = () => {
@@ -43,17 +56,34 @@ const Items = (props) => {
             <div id='rank'>{ props.isSearch ? '' : (props.isPopular ? props.idx : ( props.idx<=3 ? <span id='new'>신규</span> : ''))}</div>
             <div id='word-info-box'>
                 <div><br/>{props.data.word}</div>
-                <div>{props.data.explain}</div>
+                <div>
+                {
+                    smalltext && props.data.explain.length > 10 ? 
+                    props.data.explain.substr(0,10)+"..." : 
+                    (
+                        middletext && props.data.explain.length > 12 ?
+                        props.data.explain.substr(0,12)+"..." : 
+                        (
+                            bigtext && props.data.explain.length > 18 ?
+                            props.data.explain.substr(0,18)+"..." : props.data.explain
+                        )
+                    )
+                }
+                </div>
             </div>
             <div id='main-btns'>
                 {
                 (localStorage.getItem('id'))?
                 <div>
-                    {(likeToggle === false) ? (((props.data.like_user_ids).includes(parseInt(localStorage.getItem('id'))))?<img alt='이미지 없음' className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>:<img alt='이미지 없음' className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={heartToggle}/>) : <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>}
+                    {(likeToggle === false) ? 
+                    (((props.data.like_user_ids).includes(parseInt(localStorage.getItem('id'))))
+                    ? <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/> 
+                    : <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={heartToggle}/>) 
+                    : <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/fillHeart.png' onClick={heartToggle}/>}
                 </div>:
                 <div>
-                    <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/unfillHeart.png'/>
-                </div>    
+                    <img alt='이미지 없음' className='btn' src='/ShinjoeoImg/unfillHeart.png' onClick={()=> alert('좋아요는 로그인 후 가능합니다 !')}/>
+                </div> 
                 }
 
                 <div>
