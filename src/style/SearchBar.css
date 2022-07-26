@@ -1,0 +1,27 @@
+#SearchBarDiv {
+  height: 50px;
+  width: 90%;
+  border: 1px solid #bc810f33;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#searchInput {
+  height: 70%;
+  width: 96%;
+  border: 1px solid rgba(170, 176, 146, 0.5);
+  border-radius: 10px;
+  display: block;
+  margin: 1.5% auto;
+  font-family: 'YiSunShinRegular';
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#searchImg {
+  cursor: pointer;
+  height: 41.67%;
+  width: 6%;
+  position: relative;
+  left: 90%;
+  bottom: 70%;
+}
