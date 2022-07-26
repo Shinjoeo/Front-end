@@ -38,6 +38,7 @@
   height: 47%;
   font-size: 17px;
   margin-top: 3%;
+  opacity: 50%;
 }
 
 /* 버튼들 */
@@ -59,10 +60,6 @@
 
 #main-btns > :nth-child(3) > .btn {
   height: 20px;
-}
-
-#word-info-box > :nth-child(2) {
-  opacity: 50%;
 }
 
 /* 버튼 토글 and 설명 */
@@ -103,3 +100,4 @@
 #trash-none {
   display: none;
 }
+

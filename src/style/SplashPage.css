@@ -1,0 +1,121 @@
+/* 전체 컨테이너 */
+.splash-container {
+    background-image: url("../../public/ShinjoeoImg/backgroundImg_main.png");
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* 로고 공통 속성 */
+.splash-logo, .mobile-splash-logo {
+    background-color: rgba(245, 245, 245, 0.5);
+    border-radius: 7px;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+}
+
+.splash-logo > #logo-text, .mobile-splash-logo > #mobile-logo-text {
+    margin: 3px;
+    border: 1px solid #AAB092;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 웹버전 로고 */
+.splash-logo {
+    width: 280px;
+    height: 80px;
+}
+
+.splash-logo > #logo-text {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 72px;
+}
+
+/* 모바일버전 로고 */
+.mobile-splash-logo {
+    width: 80px;
+    height: 280px;
+    position: relative;
+    left: 100px;
+    top: -60px;
+}
+
+.mobile-splash-logo > #mobile-logo-text {
+    padding-top: 17px;
+    font-size: 45px;
+    text-align: center;
+    height: 272px;
+    font-weight: bold;
+}
+
+/* 버튼 */
+.splash-container > #btn-not-login, .splash-container > #btn-kakao {
+    border: none;
+    font-family: "YiSunShinRegular";
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.splash-container > #btn-not-login {
+    color: #fff;
+    background-color: rgb(92, 92, 70, 0.48);
+}
+
+.splash-container > #btn-not-login:hover {
+    background-color: rgb(92, 92, 70, 0.8);
+}
+
+.splash-container > #btn-kakao {
+    color: rgb(61, 35, 15, 0.8);
+    background-color: rgb(254, 229, 0.5);
+}
+
+.splash-container > #btn-kakao:hover {
+    background-color: rgba(182, 169, 54, 0.849);
+    color: #fff;
+}
+
+/* made-by */
+#made-by-text {
+    border-bottom: 1px solid rgb(92, 92, 70, 0.48);
+}
+
+.splash-container > #btn-kakao > img {
+    width: 13px;
+}
+
+
+@media (min-width: 450px) {
+    .splash-logo {
+        display: block;
+    }
+
+    .mobile-splash-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .splash-container {
+        min-width: 375px;
+        background-image: url("../../public/ShinjoeoImg/backgroundImg_nologo.png");
+    }
+
+    .splash-logo {
+        display: none;
+    }
+
+    .mobile-splash-logo {
+        display: block;
+    }
+}
