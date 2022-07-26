@@ -4,7 +4,8 @@ import SearchBar from '../Components/SearchBar';
 import List from '../Components/List';
 import '../style/MainPage.css';
 import {useState,useEffect} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import Myanalysis from '../Components/Myanalysis';
 
 const MainPage = () => {
     const [searchWord, setSearchWord] = useState("");
@@ -59,7 +60,8 @@ const MainPage = () => {
                 <div className='home-btn'>
                     <button className='homebtn' onClick={goUpload}>신조어 등록하기</button>                
                 </div> : null
-            }   
+            }
+            <Myanalysis/>
         </div>
     );
 };
