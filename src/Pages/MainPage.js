@@ -13,7 +13,10 @@ const MainPage = () => {
 
     const navigate = useNavigate();
     const goUpload = () => {
-        navigate('/upload');
+        let returnVal = window.confirm('글을 등록하시겠습니까 ?');
+        if(returnVal === true){
+            navigate('/upload');
+        }
     }
 
     useEffect(()=>{
@@ -58,7 +61,7 @@ const MainPage = () => {
             {
                 localStorage.getItem('accessToken') ?
                 <div className='home-btn'>
-                    <button className='homebtn' onClick={goUpload}>신조어 등록하기</button>                
+                    <button className='homebtn' onClick={goUpload}>+</button>                
                 </div> : null
             }
             <Myanalysis/>
