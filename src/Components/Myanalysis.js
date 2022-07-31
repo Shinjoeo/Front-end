@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { KAKAO_AD_UNIT } from '../privateUrls';
 
 const Myanalysis = () => {
 
@@ -12,7 +13,7 @@ const Myanalysis = () => {
       scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
       ins.setAttribute('data-ad-width','320');
       ins.setAttribute('data-ad-height','50');
-      ins.setAttribute('data-ad-unit','DAN-ouCvsLgg0W0uL6U3');
+      ins.setAttribute('data-ad-unit', KAKAO_AD_UNIT);
       document.querySelector('.adfit').appendChild(ins);
       document.querySelector('.adfit').appendChild(scr);
   }, [])    
