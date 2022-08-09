@@ -61,9 +61,12 @@ const MainPage = () => {
             {
                 localStorage.getItem('accessToken') ?
                 <div className='home-btn'>
+                    <div></div>
                     <button className='homebtn' onClick={goUpload}>+</button>                
-                </div> : null
+                </div> 
+                : null
             }
+            <div id='addfit-top'></div>
             <Myanalysis/>
         </div>
     );
